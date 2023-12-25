@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptWaiter - Order Your Prompt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        header h2 {
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: normal;
+            color: #eee;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transform: translateZ(20px);
+            position: relative;
+            z-index: 2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: box-shadow 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PromptWaiter</h1>
+    <h2>Order your prompt and get that delivered in less than 12hrs</h2>
+</header>
+
+<form id="promptForm">
+    <label for="clientEmail">Your Email:</label>
+    <input type="email" id="clientEmail" name="clientEmail" required>
+
+    <label for="clientNeeds">Your Needs:</label>
+    <textarea id="clientNeeds" name="clientNeeds" rows="4" required></textarea>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script>
+    function submitForm() {
+        var clientEmail = document.getElementById("clientEmail").value;
+        var clientNeeds = document.getElementById("clientNeeds").value;
+
+        // You can add more validation here if needed
+
+        // Send the data to your email (you may need a server for this)
+        var mailtoLink = "mailto:pathakghhbz@gmail.com?subject=Client Prompt&body=Client Email: " + clientEmail + "%0A%0AClient Needs: " + clientNeeds;
+        window.location.href = mailtoLink;
+
+        // You may want to clear the form after submission
+        document.getElementById("promptForm").reset();
+    }
+</script>
+
+</body>
+</html>
